@@ -20,5 +20,12 @@
   You have visited this page {{ num_visits }}{% if num_visits == 1 %} time{% else %} times{% endif %}.
   </p>
 
+  <form method="get" action = "{% url 'index' %}">
+    <input type="text" name="search_word" placeholder="Enter a search word">
+    <button type="submit">Искать</button>
+  </form>
+  <br>
+  <li><strong>You searched for: {{ search_word }}</strong> </li>
+  <li><strong>Books with the word:</strong> {{ num_books_with_word }}</li>
 {% endblock %}
 
